@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+</head>
+
+<body>
+    <%- include('./partials/nav'); %>
+        <main>
+            <ul>
+                <%profesores.map((profesor)=>{ %>
+                    <li>
+                        <!-- <img src="images/car.svg" alt="car"> -->
+                        <div>
+                            <p>Nombre:
+                                <%=profesor.nombre%>
+                            </p>
+                            <p>
+                                Edad:
+                                <%=profesor.edad%>
+                            </p>
+                            <p>
+                                Modulo:
+                                <%=profesor.modulo%>
+                            </p>
+                            <p>
+                                Pi:
+                                <%=profesor.pi%>
+                            </p>
+                        </div>
+                    </li>
+                    <% })%>
+            </ul>
+        </main>
+</body>
+
+</html>
