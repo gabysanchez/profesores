@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <%- include('./partials/head'); %> -->
+</head>
+
+<body>
+    <%- include('./partials/nav'); %>
+        <main>
+            <form class="nuevo" action="/" method="POST">
+                <label>Nombre:</label><input type="text" name="nombre">
+                <label>Edad:</label><input type="text" name="edad">
+                <label>Modulo:</label><input type="text" name="modulo">
+                <label>Pi:</label><input type="text" name="pi" type="number">
+                <input type="submit" value="Añadir">
+            </form>
+        </main>
+</body>
+
+</html>

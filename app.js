@@ -3,22 +3,24 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+import Profesor from './entities/Profesor.js';
+import { profesores } from './data/profesores.js';
+
 app.set('view engine', 'ejs');
 app.use(express.static('./public')); // estilos e imágenes
 
 //vista y filtrado de busqueda
 app.get('/', (req, res) => {
-  let profesores = [];
   res.render('index', { profesores });
 });
 
 //recibe datos del parametro
-// app.post('/', (req, res) => {
-//   const {nombre, edad, modulo, pi} = req.body;
-//   const newProfesor = new Profesor(nombre, edad, modulo, pi)
+app.post('/', (req, res) => {
+  const { nombre, edad, modulo, pi } = req.body;
+  const newProfesor = new Profesor(nombre, edad, modulo, pi);
 
-//   res.render('index', {profesores: [...profesores, newProfesor]});
-// });
+  res.render('index', { profesores: [...profesores, newProfesor] });
+});
 
 //vista del form
 app.get('/form', (req, res) => {
