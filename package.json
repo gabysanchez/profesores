@@ -1,0 +1,24 @@
+{
+  "name": "profesores",
+  "version": "1.0.0",
+  "description": "Ranking de profesores",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabysanchez/profesores.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabysanchez/profesores/issues"
+  },
+  "homepage": "https://github.com/gabysanchez/profesores#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
