@@ -9,9 +9,25 @@ import { profesores } from './data/profesores.js';
 app.set('view engine', 'ejs');
 app.use(express.static('./public')); // estilos e imágenes
 
-//vista y filtrado de busqueda
 app.get('/', (req, res) => {
-  res.render('index', { profesores });
+  let profesoresFiltrados = [];
+  let busqueda = req.query.busqueda;
+  if (busqueda) {
+    for (let i = 0; i < profesores.length; i++) {
+      let profesor = profesores[i];
+      if (
+        profesor.nombre.includes(busqueda) ||
+        profesor.edad == busqueda ||
+        profesor.modulo.includes(busqueda) ||
+        profesor.pi == busqueda
+      ) {
+        profesoresFiltrados = [...profesoresFiltrados, profesor];
+      }
+    }
+  } else {
+    profesoresFiltrados = [...profesores];
+  }
+  res.render('index', { profesores: profesoresFiltrados });
 });
 
 //recibe datos del parametro
